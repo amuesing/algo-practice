@@ -43,10 +43,17 @@ const same = (arr1, arr2) => {
         if(!(key ** 2 in frequencyCounter2)) { // if key value of frequencyCounter1[i] is not presented and squared in frequencyCounter2, return false
             return false
         }
-        if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
+        if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){ // checking to see if frequency of the values is the same by measuring truthy values
             return false
         }
     }
     return true
 }
-console.log(same([1,2,3], [4,4,9]))
+// console.log(same([1,2,3], [4,4,9]))
+
+/** Anagrams */
+
+// Given two strings, write a function to determine if the
+// second string is an anagram of the first. An anagram is
+// a word, phrase, or name formed by rearranging the
+// letters of another, such as cinema, formed iceman.
