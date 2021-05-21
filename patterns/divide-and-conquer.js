@@ -15,6 +15,8 @@
 
 //** Naive Solution **//
 
+// Linear Search
+
 // function search(arr, value) {
 //     for (let i = 0; i < arr.length; i++) {
 //         if(arr[i] == value) {
@@ -26,24 +28,46 @@
 
 //** Refactored Solution **//
 
-const search = (array, value) => {
+// const search = (array, value) => {
 
+//     let min = 0;
+//     let max = array.length - 1;
+
+//     while (min <= max) {
+//         let middle = Math.floor((min + max) / 2);
+//         let currentElement= array[middle];
+
+//         if (array[middle] < value) {
+//             min = middle + 1;
+//         }
+//         else if (array[middle] > value) {
+//             max = middle -1;
+//         }
+//         else {
+//             return middle;
+//         }
+//     }
+
+// }
+
+// Binary Search
+
+const search = (array, value) => {
     let min = 0;
     let max = array.length - 1;
 
     while (min <= max) {
         let middle = Math.floor((min + max) / 2);
-        let currentElement= array[middle];
+        let currentElement = array[middle];
 
         if (array[middle] < value) {
-            min = middle + 1;
+            min = middle - 1;
         }
         else if (array[middle] > value) {
-            max = middle -1;
-        }
-        else {
-            return middle;
+            max = middle - 1;
         }
     }
-
+    return -1;
 }
+
+// Time Complexity - Log(N)
