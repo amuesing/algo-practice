@@ -23,7 +23,7 @@
 //     return true // iterate through the array, and if we never return false we return true
 // }
 
-//** Refactored */
+//** Refactored **//
 
 // Time Complexity = O(n)
 
