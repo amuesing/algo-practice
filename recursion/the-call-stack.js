@@ -26,3 +26,22 @@
 // When we write recursive functions,
 // we keep pushing new functions onto
 // the call stack!
+
+//** How recursive functions work **//
+
+// Invoke the same function with
+// a different input until you
+// reach your base case!
+
+// Base Case -- The condition when the recursion ends
+// Different Input -- recursive call
+
+const countDown = (num) => {
+    if(num <= 0) {
+        console.log("all done!");
+        return;
+    }
+    console.log(num);
+    num--;
+    countDown(num)
+}

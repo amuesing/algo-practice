@@ -32,3 +32,8 @@ const binarySearch = (arr, elem) => {
 }
 
 console.log(binarySearch([2,5,6,9,13,15,28], 15))
+
+//** What about Big O **//
+
+// O(log n) -- worst and average case
+// O(1) -- best case
