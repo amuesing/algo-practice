@@ -30,33 +30,42 @@
 // If arr[j] is greater than arr[j+1], swap those two values!
 // Return the sorted array
 
-// function bubbleSort(arr) {
-//     for(var i = arr.length; i > 0; i--){
-//         for(var j = 0; j < i - 1; j++){
-//            if(arr[j] > arr[j+1]){
-//                //SWAP!
-//                var temp = arr[j];
-//                arr[j] = arr[j+1];
-//                arr[j+1] = temp
-//            }
-//         }   
-//     }
-//     return arr;
-// }
+// Optimized with noSwaps variable
 
-const bubbleSort = (arr) => {
-    const swap = (arr, idx1, idx2) => {
-        [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
-    };
-
-    for (let i = arr.length; i > 0; i--) {
-        for (let j = 0; j < i - 1; j++) {
-            if (arr[j] > arr[j+1]) {
-                swap(arr, j, j + 1);
-            }
-        }
+function bubbleSort(arr) {
+    var noSwaps;
+    for(var i = arr.length; i > 0; i--){
+        noSwaps = true;
+        for(var j = 0; j < i - 1; j++){
+           if(arr[j] > arr[j+1]){
+               //SWAP!
+               var temp = arr[j];
+               arr[j] = arr[j+1];
+               arr[j+1] = temp;
+               noSwaps = false;
+           }
+        }  
+        if(noSwaps) break; 
     }
     return arr;
 }
 
+// const bubbleSort = (arr) => {
+//     const swap = (arr, idx1, idx2) => {
+//         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+//     };
+
+//     for (let i = arr.length; i > 0; i--) {
+//         for (let j = 0; j < i - 1; j++) {
+//             if (arr[j] > arr[j+1]) {
+//                 swap(arr, j, j + 1);
+//             }
+//         }
+//     }
+//     return arr;
+// }
+
 console.log(bubbleSort([37,45,29,8]))
+
+// In general, the time complexity is O(n^2) because we have a nested loop.
+// However, if the data is already sorted, or nearly sorted then it is closer to linear time O(n).
