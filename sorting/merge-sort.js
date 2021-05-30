@@ -16,7 +16,7 @@
 // This function should run in O(n+m) time and O(n+m) space
 // and should not modify the parameters passed to it.
 
-//** Pseudocode **//
+//** Merge Pseudocode **//
 
 // Create an empty array, take a look at the smallest values in each input array.
 
@@ -55,4 +55,32 @@
         return results;
     }
 
-console.log(merge([1,10,50],[2,14,99,100]))
+// console.log(merge([1,10,50],[2,14,99,100]))
+
+//** mergeSort Pseudocode **//
+
+// Break up the array into halves until you have arrays that
+// are empty or have one element.
+
+// Once you have smaller sorted arrays, merge those arrays
+// with other sorted arrays until you are back at the full length
+// of the array.
+
+// Once the array has been merged back together, return the merged
+// (and sorted!) array.
+
+function mergeSort(arr) {
+    if(arr.length <= 1) return arr;
+    let mid = Math.floor(arr.length / 2);
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+
+console.log(mergeSort([10,24,76,73]))
+
+// Time Complexity: O(n log n)
+    // O(log n) is the number of decompositions ([1], [2], [3], [4] => [1, 2, 3, 4])
+    // O(n) is the number of comparisons per decomposition (i.e. 4)
+// Space Complexity: O(n)
+    // As we add more arrays through the decomposition process, more space is required, so it increases at the rate of O(n) and not O(1)
