@@ -46,3 +46,5 @@ return arr;
 }
 
 console.log(selectionSort([34,22,10,19,17]))
+
+// Time complexity O(n^2)
