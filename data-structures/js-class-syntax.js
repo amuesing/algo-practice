@@ -12,9 +12,10 @@
 //** The Syntax **//
 
 class Student {
-    constructor(firstName, lastName) {
+    constructor(firstName, lastName, year) {
         this.firstName = firstName;
         this.lastName = lastName;
+        this.grade = year;
     }
 }
 
@@ -27,4 +28,5 @@ class Student {
 
 // We use the "new" keyword
 
-let firstStudent = new Student("Aaron", "Muesing")
+let firstStudent = new Student("Aaron", "Muesing", 3);
+let secondStudent = new Student("Allyson", "Clare", 4)
